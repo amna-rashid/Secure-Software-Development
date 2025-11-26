@@ -1,0 +1,252 @@
+Run started:2025-11-17 11:39:44.192698
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'secure_master_key_2025'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b105_hardcoded_password_string.html
+   Location: .\main.py:50:26
+49	        # In production, this should be securely stored/retrieved
+50	        master_password = "secure_master_key_2025"
+51	        self.encryption.derive_key_from_password(master_password)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:25:4
+24	    db2 = DatabaseManager()
+25	    assert db1 is db2, "Singleton pattern failed - different instances created"
+26	    print("✓ Singleton pattern working: Same instance returned")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:35:8
+34	        user = db1.get_user("testuser")
+35	        assert user is not None, "User not found"
+36	        assert user['username'] == "testuser", "Username mismatch"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:36:8
+35	        assert user is not None, "User not found"
+36	        assert user['username'] == "testuser", "Username mismatch"
+37	        print("✓ User retrieval working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:66:8
+65	        decrypted = encryption.decrypt_data(encrypted)
+66	        assert decrypted == test_data, "Decryption failed - data mismatch"
+67	        print("✓ Data decrypted successfully - integrity verified")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:73:8
+72	        decrypted2 = encryption.decrypt_data(encrypted2)
+73	        assert decrypted2 == test_data, "Password-based encryption failed"
+74	        print("✓ Password-based key derivation working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:95:8
+94	        is_valid = ChecksumManager.verify_checksum(test_data, checksum)
+95	        assert is_valid, "Checksum verification failed"
+96	        print("✓ Checksum verification working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:101:8
+100	        is_valid_modified = ChecksumManager.verify_checksum(modified_data, checksum)
+101	        assert not is_valid_modified, "Checksum should fail for modified data"
+102	        print("✓ Checksum detects tampering correctly")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:126:8
+125	        logged_user = user_mgr.login("testuser2", "password123")
+126	        assert logged_user is not None, "Login failed"
+127	        assert logged_user.username == "testuser2", "Username mismatch"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:127:8
+126	        assert logged_user is not None, "Login failed"
+127	        assert logged_user.username == "testuser2", "Username mismatch"
+128	        print("✓ Login working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:131:8
+130	        # Test inheritance - regular user
+131	        assert not user.can_delete_artefact(999), "Regular user should not delete others' artefacts"
+132	        print("✓ Regular user permissions working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:136:8
+135	        admin = user_mgr.register_user("admin_test", "admin123", "admin")
+136	        assert admin.role == "admin", "Admin role not set"
+137	        assert admin.can_delete_artefact(999), "Admin should delete any artefact"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:137:8
+136	        assert admin.role == "admin", "Admin role not set"
+137	        assert admin.can_delete_artefact(999), "Admin should delete any artefact"
+138	        print("✓ Admin user permissions working (Inheritance pattern)")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:182:8
+181	        )
+182	        assert artefact_id is not None, "Artefact creation failed"
+183	        print(f"✓ CREATE operation working: Artefact ID {artefact_id}")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:187:8
+186	        artefact = artefact_mgr.read_artefact(artefact_id, user)
+187	        assert artefact is not None, "Artefact read failed"
+188	        assert artefact['artefact_name'] == "Test Artefact", "Artefact name mismatch"
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:188:8
+187	        assert artefact is not None, "Artefact read failed"
+188	        assert artefact['artefact_name'] == "Test Artefact", "Artefact name mismatch"
+189	        print("✓ READ operation working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:196:8
+195	        updated = artefact_mgr.update_artefact(artefact_id, test_file, user)
+196	        assert updated, "Artefact update failed"
+197	        print("✓ UPDATE operation working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:201:8
+200	        updated_artefact = artefact_mgr.read_artefact(artefact_id, user)
+201	        assert updated_artefact['modified_at'] is not None, "Modification timestamp not set"
+202	        print("✓ Timestamp recording working (Observer pattern)")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:206:8
+205	        deleted = artefact_mgr.delete_artefact(artefact_id, user)
+206	        assert deleted, "Artefact deletion failed"
+207	        print("✓ DELETE operation working")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:259:8
+258	        all_artefacts = artefact_mgr.list_all_artefacts(admin)
+259	        assert len(all_artefacts) > 0, "Admin should see all artefacts"
+260	        print("✓ Admin can view all artefacts")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:264:8
+263	        user_artefacts = artefact_mgr.list_user_artefacts(regular_user)
+264	        assert len(user_artefacts) > 0, "User should see own artefacts"
+265	        print("✓ User can view own artefacts")
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b101_assert_used.html
+   Location: .\test_application.py:270:8
+269	        can_modify = other_user.can_modify_artefact(regular_user.user_id)
+270	        assert not can_modify, "User should not modify others' artefacts"
+271	        print("✓ Permission control working")
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.8.6/plugins/b110_try_except_pass.html
+   Location: .\test_application.py:327:8
+326	                print("\n✓ Test database cleaned up")
+327	        except:
+328	            pass
+329	    
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 1521
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 23
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 22
+Files skipped (0):

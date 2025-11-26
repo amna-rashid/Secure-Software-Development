@@ -1,0 +1,26 @@
+MUSICAL SCORE - TEST FILE
+========================
+
+Composition: Test Score
+Composer: Test Composer
+Date: 2025
+
+NOTATION:
+C D E F G A B C
+1 2 3 4 5 6 7 8
+
+MEASURE 1:
+C - E - G - C
+Whole note, half note, quarter note
+
+MEASURE 2:
+D - F - A - D
+Musical notation test
+
+MEASURE 3:
+E - G - B - E
+Score file demonstration
+
+This file represents a musical score
+stored in the secure copyright application.
+
